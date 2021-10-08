@@ -24,9 +24,21 @@ namespace PiEstimator
         {
             Random rand = new Random(System.Environment.TickCount);
             double pi = 0.0;
+            double i = 0.0;
+            double hit = 0.0;
+            while (i < n)
+            {
+                double x = rand.NextDouble();
+                double y = rand.NextDouble();
+                if ((Math.Pow(x, 2) + Math.Pow(y, 2)) <= 1)
+                {
+                    hit++;
+                }
 
+                i++;
+            }
             // TODO: Calculate Pi
-
+            pi = ((double)4.0*hit)/i;
             return pi;
         }
 
